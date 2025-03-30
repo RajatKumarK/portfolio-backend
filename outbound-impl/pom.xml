@@ -17,5 +17,9 @@
       <artifactId>outbound-api</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.rajatkumar.portfolio</groupId>
+      <artifactId>entity</artifactId>
+    </dependency>
   </dependencies>
 </project>

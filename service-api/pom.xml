@@ -12,5 +12,9 @@
   <description>Service API interfaces</description>
 
   <dependencies>
+    <dependency>
+      <groupId>com.rajatkumar.portfolio</groupId>
+      <artifactId>entity</artifactId>
+    </dependency>
   </dependencies>
 </project>

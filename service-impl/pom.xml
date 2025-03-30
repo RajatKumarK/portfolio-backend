@@ -22,5 +22,9 @@
       <artifactId>dao</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.rajatkumar.portfolio</groupId>
+      <artifactId>outbound-api</artifactId>
+    </dependency>
   </dependencies>
 </project>

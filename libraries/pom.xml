@@ -12,5 +12,9 @@
   <description>Reusable libraries and utilities</description>
 
   <dependencies>
+    <dependency>
+      <groupId>com.rajatkumar.portfolio</groupId>
+      <artifactId>service-api</artifactId>
+    </dependency>
   </dependencies>
 </project>
