@@ -50,5 +50,5 @@ public class Project {
   @ElementCollection
   @MapKeyColumn(name = "key")
   @Column(name = "value")
-  private Map<String, Object> metadata = new HashMap<>();
+  private Map<String, String> metadata = new HashMap<>();
 }

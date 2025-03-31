@@ -119,10 +119,10 @@ public class ProjectServiceImpl implements ProjectService {
       }
 
       // Add metadata
-      Map<String, Object> metadata = new HashMap<>();
-      metadata.put("stargazers_count", repo.getStargazers_count());
-      metadata.put("forks_count", repo.getForks_count());
-      metadata.put("watchers_count", repo.getWatchers_count());
+      Map<String, String> metadata = new HashMap<>();
+      metadata.put("stargazers_count", String.valueOf(repo.getStargazers_count()));
+      metadata.put("forks_count", String.valueOf(repo.getForks_count()));
+      metadata.put("watchers_count", String.valueOf(repo.getWatchers_count()));
       project.setMetadata(metadata);
 
       // Save the project
