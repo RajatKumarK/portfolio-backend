@@ -1,5 +1,6 @@
 package com.rajatkumar.portfolio.portfolio_backend;
 
+import com.rajatkumar.portfolio.portfolio_backend.Configuration.exception.ResourceNotFoundException;
 import com.rajatkumar.portfolio.portfolio_backend.api.ContactMessageRepository;
 import com.rajatkumar.portfolio.portfolio_backend.dao.ContactMessage;
 import java.time.LocalDateTime;

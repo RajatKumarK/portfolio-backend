@@ -5,16 +5,16 @@ import java.util.List;
 
 public interface BlogService {
 
-  public List<BlogPost> getAllBlogPosts();
+  List<BlogPost> getAllBlogPosts();
 
-  public BlogPost getBlogPostById(Long id);
+  BlogPost getBlogPostById(Long id);
 
-  public BlogPost createBlogPost(BlogPost blogPost);
+  BlogPost createBlogPost(BlogPost blogPost);
 
-  public BlogPost updateBlogPost(Long id, BlogPost blogPostDetails);
+  BlogPost updateBlogPost(Long id, BlogPost blogPostDetails);
 
-  public void deleteBlogPost(Long id);
+  void deleteBlogPost(Long id);
 
-  public List<BlogPost> getBlogPostsByTag(String tag);
+  List<BlogPost> getBlogPostsByTag(String tag);
 
 }

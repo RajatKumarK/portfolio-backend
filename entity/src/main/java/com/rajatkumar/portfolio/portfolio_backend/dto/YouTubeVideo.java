@@ -4,13 +4,18 @@ import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class YouTubeVideo {
+
   private String id;
   private String title;
   private String description;
@@ -19,5 +24,4 @@ public class YouTubeVideo {
   private LocalDateTime publishedAt;
   private int viewCount;
 
-  // Getters, setters, constructors
 }

@@ -1,6 +1,7 @@
 package com.rajatkumar.portfolio.portfolio_backend;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.rajatkumar.portfolio.portfolio_backend.api.LinkedInClient;
 import com.rajatkumar.portfolio.portfolio_backend.dto.LinkedInPost;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -11,11 +12,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
-public class LinkedInClientImpl {
+public class LinkedInClientImpl implements LinkedInClient {
   private final RestTemplate restTemplate;
   private final String apiUrl;
   private final String accessToken;
@@ -25,7 +31,7 @@ public class LinkedInClientImpl {
   private LocalDateTime lastUpdated;
 
   @Autowired
-  public LinkedInClient(RestTemplate restTemplate,
+  public LinkedInClientImpl(RestTemplate restTemplate,
       @Value("${social.linkedin.api-url}") String apiUrl,
       @Value("${social.linkedin.access-token}") String accessToken) {
     this.restTemplate = restTemplate;

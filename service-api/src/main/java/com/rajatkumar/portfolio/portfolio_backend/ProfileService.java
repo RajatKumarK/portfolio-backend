@@ -1,12 +1,13 @@
 package com.rajatkumar.portfolio.portfolio_backend;
 
 import java.util.Map;
-import org.springframework.context.annotation.Profile;
+import com.rajatkumar.portfolio.portfolio_backend.dao.Profile;
 
 public interface ProfileService {
-  public Profile getProfile();
 
-  public Profile updateProfile(Profile profileDetails) ;
+  Profile getProfile();
 
-  public Profile updateSkills(Map<String, String> skills) ;
+  Profile updateProfile(Profile profileDetails);
+
+  Profile updateSkills(Map<String, String> skills);
 }

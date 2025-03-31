@@ -1,10 +1,19 @@
 package com.rajatkumar.portfolio.portfolio_backend;
 
+import com.rajatkumar.portfolio.portfolio_backend.Configuration.exception.InvalidTokenException;
+import com.rajatkumar.portfolio.portfolio_backend.Configuration.utility.JwtUtil;
 import com.rajatkumar.portfolio.portfolio_backend.api.UserRepository;
 import com.rajatkumar.portfolio.portfolio_backend.dao.User;
 import com.rajatkumar.portfolio.portfolio_backend.dto.JwtResponse;
 import com.rajatkumar.portfolio.portfolio_backend.dto.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service

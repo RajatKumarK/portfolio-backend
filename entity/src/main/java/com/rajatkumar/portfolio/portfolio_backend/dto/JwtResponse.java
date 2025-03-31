@@ -1,10 +1,21 @@
 package com.rajatkumar.portfolio.portfolio_backend.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class JwtResponse {
   private String accessToken;
   private String refreshToken;
   private String username;
   private String role;
-
-  // Getters, setters, constructors
 }

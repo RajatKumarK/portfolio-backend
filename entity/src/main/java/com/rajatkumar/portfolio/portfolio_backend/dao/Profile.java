@@ -7,8 +7,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.GeneratedValue;
 import java.util.Map;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Profile {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,5 +44,4 @@ public class Profile {
   @ElementCollection
   private Map<String, String> skills; // skill name -> proficiency level
 
-  // Getters, setters, constructors
 }

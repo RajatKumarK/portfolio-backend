@@ -1,6 +1,7 @@
 package com.rajatkumar.portfolio.portfolio_backend;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.rajatkumar.portfolio.portfolio_backend.api.YouTubeClient;
 import com.rajatkumar.portfolio.portfolio_backend.dto.YouTubeVideo;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
-public class YouTubeClientImpl {
+public class YouTubeClientImpl implements YouTubeClient {
   private final RestTemplate restTemplate;
   private final String apiUrl;
   private final String apiKey;
@@ -27,7 +28,7 @@ public class YouTubeClientImpl {
   private LocalDateTime lastUpdated;
 
   @Autowired
-  public YouTubeClient(RestTemplate restTemplate,
+  public YouTubeClientImpl(RestTemplate restTemplate,
       @Value("${social.youtube.api-url}") String apiUrl,
       @Value("${social.youtube.api-key}") String apiKey,
       @Value("${social.youtube.channel-id}") String channelId) {

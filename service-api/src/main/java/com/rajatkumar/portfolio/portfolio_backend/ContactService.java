@@ -5,13 +5,13 @@ import java.util.List;
 
 public interface ContactService {
 
-  public ContactMessage saveContactMessage(ContactMessage contactMessage);
+  ContactMessage saveContactMessage(ContactMessage contactMessage);
 
-  public List<ContactMessage> getUnreadMessages();
+  List<ContactMessage> getUnreadMessages();
 
-  public ContactMessage markAsRead(Long id);
+  ContactMessage markAsRead(Long id);
 
-  public List<ContactMessage> getAllMessages();
+  List<ContactMessage> getAllMessages();
 
-  public void deleteMessage(Long id);
+  void deleteMessage(Long id);
 }

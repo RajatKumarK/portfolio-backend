@@ -7,12 +7,12 @@ import java.util.List;
 
 public interface SocialMediaService {
 
-  public List<LinkedInPost> getLinkedInPosts() ;
+   List<LinkedInPost> getLinkedInPosts() ;
 
-  public List<Tweet> getTweets() ;
+   List<Tweet> getTweets() ;
 
-  public List<YouTubeVideo> getYouTubeVideos() ;
+   List<YouTubeVideo> getYouTubeVideos() ;
 
-  public void refreshAllSocialMedia() ;
+   void refreshAllSocialMedia() ;
 
 }

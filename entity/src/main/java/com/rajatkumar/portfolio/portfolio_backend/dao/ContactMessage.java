@@ -6,8 +6,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.GeneratedValue;
 import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class ContactMessage {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +35,4 @@ public class ContactMessage {
   private LocalDateTime receivedAt;
   private boolean read;
 
-  // Getters, setters, constructors
 }

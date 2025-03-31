@@ -1,36 +1,43 @@
 package com.rajatkumar.portfolio.portfolio_backend;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.rajatkumar.portfolio.portfolio_backend.api.TwitterClient;
 import com.rajatkumar.portfolio.portfolio_backend.dto.Tweet;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
-public class TwitterClientImpl {
+public class TwitterClientImpl implements TwitterClient {
 
   private final RestTemplate restTemplate;
   private final String apiUrl;
   private final String bearerToken;
 
-  // Cache to store tweets and reduce API calls
-  private List<Tweet> cachedTweets = new ArrayList<>();
-  private LocalDateTime lastUpdated;
-
   @Autowired
-  public TwitterClient(RestTemplate restTemplate,
+  public TwitterClientImpl(RestTemplate restTemplate,
       @Value("${social.twitter.api-url}") String apiUrl,
       @Value("${social.twitter.bearer-token}") String bearerToken) {
     this.restTemplate = restTemplate;
     this.apiUrl = apiUrl;
     this.bearerToken = bearerToken;
   }
+
+  // Cache to store tweets and reduce API calls
+  private List<Tweet> cachedTweets = new ArrayList<>();
+  private LocalDateTime lastUpdated;
 
   /**
    * Fetches tweets, either from cache if recent or from API

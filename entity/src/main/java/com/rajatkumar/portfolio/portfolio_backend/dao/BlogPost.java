@@ -8,8 +8,20 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import java.time.LocalDateTime;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class BlogPost {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,5 +40,4 @@ public class BlogPost {
   @ElementCollection
   private List<String> tags;
 
-  // Getters, setters, constructors
 }

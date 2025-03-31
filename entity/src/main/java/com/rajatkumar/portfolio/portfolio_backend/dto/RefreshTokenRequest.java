@@ -1,7 +1,19 @@
 package com.rajatkumar.portfolio.portfolio_backend.dto;
 
-public class RefreshTokenRequest {
-  private String refreshToken;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-  // Getters, setters
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class RefreshTokenRequest {
+
+  private String refreshToken;
 }
