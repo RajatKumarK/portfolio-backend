@@ -6,7 +6,6 @@ import com.rajatkumar.portfolio.portfolio_backend.api.UserRepository;
 import com.rajatkumar.portfolio.portfolio_backend.dao.User;
 import com.rajatkumar.portfolio.portfolio_backend.dto.JwtResponse;
 import com.rajatkumar.portfolio.portfolio_backend.dto.LoginRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -17,19 +16,33 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthServiceImpl implements AuthService{
-  @Autowired
-  private UserRepository userRepository;
+public class AuthServiceImpl implements
+    AuthService {
+  private final UserRepository userRepository;
+  private final PasswordEncoder passwordEncoder;
+  private final JwtUtil jwtUtil;
+  private final AuthenticationManager authenticationManager;
 
-  @Autowired
-  private PasswordEncoder passwordEncoder;
+  public AuthServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder,
+      JwtUtil jwtUtil, AuthenticationManager authenticationManager) {
+    this.userRepository = userRepository;
+    this.passwordEncoder = passwordEncoder;
+    this.jwtUtil = jwtUtil;
+    this.authenticationManager = authenticationManager;
+  }
 
-  @Autowired
-  private JwtUtil jwtUtil;
+  @Override
+  public JwtResponse signup(LoginRequest input) {
+    User user = User.builder().
+        username(input.getUsername()).
+        password(passwordEncoder.encode(input.getPassword())).
+        role("USER").
+        build();
+    userRepository.save(user);
+    return login(input);
+  }
 
-  @Autowired
-  private AuthenticationManager authenticationManager;
-
+  @Override
   public JwtResponse login(LoginRequest request) {
     // Authenticate with Spring Security
     Authentication authentication = authenticationManager.authenticate(
@@ -45,7 +58,8 @@ public class AuthServiceImpl implements AuthService{
 
     // Generate tokens
     String accessToken = jwtUtil.generateToken(userDetails);
-    String refreshToken = jwtUtil.generateRefreshToken(userDetails);
+    String refreshToken = "864000000";
+    jwtUtil.generateRefreshToken(userDetails);
 
     return new JwtResponse(
         accessToken,
@@ -55,6 +69,7 @@ public class AuthServiceImpl implements AuthService{
     );
   }
 
+  @Override
   public JwtResponse refreshToken(String refreshToken) {
     // Validate refresh token
     String username = jwtUtil.extractUsername(refreshToken);

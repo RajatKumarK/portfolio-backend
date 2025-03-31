@@ -7,6 +7,7 @@ import com.rajatkumar.portfolio.portfolio_backend.dto.RefreshTokenRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,8 +21,14 @@ public class AuthController {
 
   private final AuthService authService;
 
+  @Autowired
   public AuthController(AuthService authService) {
     this.authService = authService;
+  }
+
+  @PostMapping("/signup")
+  public ResponseEntity<JwtResponse> register(@RequestBody LoginRequest registerUserDto) {
+    return ResponseEntity.ok(authService.signup(registerUserDto));
   }
 
   @PostMapping("/login")

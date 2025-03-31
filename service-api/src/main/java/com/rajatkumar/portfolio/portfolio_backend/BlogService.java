@@ -1,6 +1,6 @@
 package com.rajatkumar.portfolio.portfolio_backend;
 
-import com.rajatkumar.portfolio.portfolio_backend.dao.BlogPost;
+import com.rajatkumar.portfolio.portfolio_backend.dao.ContactMessage.BlogPost;
 import java.util.List;
 
 public interface BlogService {

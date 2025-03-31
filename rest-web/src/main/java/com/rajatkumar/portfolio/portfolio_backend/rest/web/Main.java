@@ -1,4 +1,4 @@
-package com.rajatkumar.portfolio.portfolio_backend;
+package com.rajatkumar.portfolio.portfolio_backend.rest.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,11 +7,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-@ComponentScan(basePackages = {"com.rajatkumar.portfolio.portfolio_backend.service", "com.rajatkumar.portfolio.portfolio_backend.repository"})
+@ComponentScan(basePackages = {"portfolio-backend.*"})
 public class Main {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Main.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(Main.class, args);
+  }
 
 }

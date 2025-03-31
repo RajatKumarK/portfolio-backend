@@ -2,7 +2,7 @@ package com.rajatkumar.portfolio.portfolio_backend;
 
 import com.rajatkumar.portfolio.portfolio_backend.Configuration.exception.ResourceNotFoundException;
 import com.rajatkumar.portfolio.portfolio_backend.api.BlogPostRepository;
-import com.rajatkumar.portfolio.portfolio_backend.dao.BlogPost;
+import com.rajatkumar.portfolio.portfolio_backend.dao.ContactMessage.BlogPost;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
