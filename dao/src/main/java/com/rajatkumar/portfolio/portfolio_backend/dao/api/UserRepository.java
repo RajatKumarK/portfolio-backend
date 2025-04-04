@@ -1,4 +1,4 @@
-package com.rajatkumar.portfolio.portfolio_backend.api;
+package com.rajatkumar.portfolio.portfolio_backend.dao.api;
 
 import com.rajatkumar.portfolio.portfolio_backend.dao.User;
 import java.util.Optional;
@@ -10,4 +10,3 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
   Optional<User> findByUsername(String username);
 }
-

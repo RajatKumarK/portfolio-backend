@@ -2,8 +2,8 @@ package com.rajatkumar.portfolio.portfolio_backend;
 
 import com.rajatkumar.portfolio.portfolio_backend.Configuration.exception.InvalidTokenException;
 import com.rajatkumar.portfolio.portfolio_backend.Configuration.utility.JwtUtil;
-import com.rajatkumar.portfolio.portfolio_backend.api.UserRepository;
 import com.rajatkumar.portfolio.portfolio_backend.dao.User;
+import com.rajatkumar.portfolio.portfolio_backend.dao.api.UserRepository;
 import com.rajatkumar.portfolio.portfolio_backend.dto.JwtResponse;
 import com.rajatkumar.portfolio.portfolio_backend.dto.LoginRequest;
 import org.springframework.security.authentication.AuthenticationManager;

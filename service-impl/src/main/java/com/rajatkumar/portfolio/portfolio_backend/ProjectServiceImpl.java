@@ -3,7 +3,7 @@ package com.rajatkumar.portfolio.portfolio_backend;
 
 import com.rajatkumar.portfolio.portfolio_backend.Configuration.exception.ResourceNotFoundException;
 import com.rajatkumar.portfolio.portfolio_backend.api.GitHubClient;
-import com.rajatkumar.portfolio.portfolio_backend.api.ProjectRepository;
+import com.rajatkumar.portfolio.portfolio_backend.dao.api.ProjectRepository;
 import com.rajatkumar.portfolio.portfolio_backend.dao.Project;
 import com.rajatkumar.portfolio.portfolio_backend.dto.GitHubRepositoryDto;
 import java.time.LocalDateTime;

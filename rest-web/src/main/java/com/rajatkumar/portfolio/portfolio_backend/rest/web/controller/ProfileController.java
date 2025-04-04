@@ -20,24 +20,10 @@ public class ProfileController {
   @Autowired
   private ProfileService profileService;
 
-//*
-//   * Get the profile information.
-//   *
-//   * @return The profile entity
-//
-
   @GetMapping
   public ResponseEntity<Profile> getProfile() {
     return ResponseEntity.ok(profileService.getProfile());
   }
-
-//*
-//   * Update the profile information.
-//   * Requires admin authorization.
-//   *
-//   * @param profileDetails The updated profile data
-//   * @return The updated profile
-
 
   @PutMapping
   @PreAuthorize("hasRole('ADMIN')")

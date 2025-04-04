@@ -2,7 +2,6 @@ package com.rajatkumar.portfolio.portfolio_backend.rest.web.controller;
 
 import com.rajatkumar.portfolio.portfolio_backend.BlogService;
 import com.rajatkumar.portfolio.portfolio_backend.dao.ContactMessage.BlogPost;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/blogs")
-@Tag(name = "Blog", description = "Operations related to projects")
 public class BlogController {
   @Autowired
   private BlogService blogService;

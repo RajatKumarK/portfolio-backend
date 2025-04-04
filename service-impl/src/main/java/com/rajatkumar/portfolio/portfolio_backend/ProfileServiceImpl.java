@@ -1,6 +1,6 @@
 package com.rajatkumar.portfolio.portfolio_backend;
 
-import com.rajatkumar.portfolio.portfolio_backend.api.ProfileRepository;
+import com.rajatkumar.portfolio.portfolio_backend.dao.api.ProfileRepository;
 import com.rajatkumar.portfolio.portfolio_backend.dao.Profile;
 import java.util.HashMap;
 import java.util.Map;

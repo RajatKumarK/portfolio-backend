@@ -1,4 +1,4 @@
-package com.rajatkumar.portfolio.portfolio_backend.api;
+package com.rajatkumar.portfolio.portfolio_backend.dao.api;
 
 import com.rajatkumar.portfolio.portfolio_backend.dao.Project;
 import java.util.List;
